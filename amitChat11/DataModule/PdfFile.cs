@@ -4,7 +4,7 @@ public class PdfFile : FileMessage
 {
     public byte[] m_Data;
     
-    protected PdfFile(MessageType type, Extensions extension, FileType fileType, string filePath) : base(type,extension,fileType)
+    public PdfFile(MessageType type, Extensions extension, FileType fileType, string filePath) : base(type,extension,fileType)
     {
         try
         {

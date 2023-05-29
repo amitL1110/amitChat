@@ -4,7 +4,7 @@ public class AudioFile: FileMessage
 {
     public byte[] m_Data;
     
-    protected AudioFile(MessageType type, Extensions extension, FileType fileType, string filePath) : base(type,extension,fileType)
+    public AudioFile(MessageType type, Extensions extension, FileType fileType, string filePath) : base(type,extension,fileType)
     {
         try
         {
