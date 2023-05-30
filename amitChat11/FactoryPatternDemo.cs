@@ -14,6 +14,8 @@ public class FactoryPatternDemo
         //creating MessageBase object just by the extension of the file path
         mes1 = messageFactory.GetMessage(filePath);
         IEnumerable<byte> collection = PacketConvert.ConvertToPacket(mes1);
+        PropertyLength propertyLength = new PropertyLength(collection, mes1);
+        PropertyIndex propertyIndex = new PropertyIndex(propertyLength);
 
     }
     

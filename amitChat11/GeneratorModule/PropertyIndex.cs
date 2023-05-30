@@ -1,6 +1,6 @@
 ﻿namespace amitChat11.GeneratorModule;
 
-public static class PropertyIndex
+public class PropertyIndex
 {
     
     public const int SYNC_INDEX = 0;
@@ -11,4 +11,28 @@ public static class PropertyIndex
     public const int RECEIVER_ID_INDEX = SENDER_ID_INDEX+PropertyLength.SENDER_ID;
     public const int MESSAGE_TYPE_INDEX = RECEIVER_ID_INDEX+PropertyLength.RECEIVER_ID;
     public const int DATA_INDEX =  MESSAGE_TYPE_INDEX+PropertyLength.MESSAGE_TYPE;
+
+    public int m_FileTypeIndex;
+    public int m_ExtensionIndex;
+    public int m_TailIndex;
+    
+    public PropertyIndex(PropertyLength propertyLength)
+    {
+        if ((propertyLength.m_FileType!=0)&(propertyLength.m_Extension!=0))
+        {
+            m_FileTypeIndex = DATA_INDEX + propertyLength.m_Data;
+            m_ExtensionIndex = m_FileTypeIndex + propertyLength.m_FileType;
+            m_TailIndex = m_ExtensionIndex + propertyLength.m_Extension;
+        }
+        else if(propertyLength.m_Extension!=0)
+        {
+            m_ExtensionIndex = DATA_INDEX + propertyLength.m_Data;
+            m_TailIndex = m_ExtensionIndex + propertyLength.m_Extension;
+        }
+        else
+        {
+            m_TailIndex = DATA_INDEX + propertyLength.m_Data;
+        }
+    }
+    
 }
