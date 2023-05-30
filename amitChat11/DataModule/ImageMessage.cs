@@ -2,8 +2,8 @@
 
 internal class ImageMessage : MessageBase
 {
-    public byte[] m_Data;
-    public Extensions m_Extension;
+    private byte[] m_Data;
+    private Extensions m_Extension;
     
     public ImageMessage(MessageType type, string filePath, Extensions extension) : base(type)
     {

@@ -2,7 +2,7 @@
 
 public class PdfFile : FileMessage 
 {
-    public byte[] m_Data;
+    private byte[] m_Data;
     
     public PdfFile(MessageType type, Extensions extension, FileType fileType, string filePath) : base(type,extension,fileType)
     {

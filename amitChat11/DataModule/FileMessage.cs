@@ -3,8 +3,8 @@
 public abstract class FileMessage : MessageBase
 {
     
-    public Extensions m_Extension;
-    public FileType m_FileType;
+    protected Extensions m_Extension;
+    protected FileType m_FileType;
 
     protected FileMessage(MessageType type, Extensions extension, FileType fileType) : base(type)
     {

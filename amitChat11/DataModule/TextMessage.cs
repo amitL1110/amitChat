@@ -3,7 +3,7 @@ using System;
 using System.Text;
 public class TextMessage : MessageBase
 {
-    public byte[] m_Data;
+    private byte[] m_Data;
     
     public TextMessage(MessageType type, string data) : base(type)
     {

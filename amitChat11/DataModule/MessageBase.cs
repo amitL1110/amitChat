@@ -2,10 +2,10 @@
 
 public abstract class MessageBase
 {
-    public Guid m_Id;
-    public Guid m_SenderId;
-    public Guid m_ReceiverId;
-    public MessageType m_Type;
+    protected Guid m_Id;
+    protected Guid m_SenderId;
+    protected Guid m_ReceiverId;
+    protected MessageType m_Type;
 
     protected MessageBase(MessageType type)
     {

@@ -7,7 +7,7 @@ public class MessageFactory
     //use getShape method to get object of type shape 
     public MessageBase GetMessage(string filePath)
     {
-        if (filePath.Contains((Extensions.Ogg).ToString()))
+        if (filePath.Contains(((Extensions.Ogg).ToString()).ToLower()))
         {
             return new AudioFile(MessageType.File, Extensions.Ogg, FileType.Audio, filePath);
         }
