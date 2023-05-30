@@ -14,10 +14,10 @@ public class PropertyLength
     public const int TAIL = 4;
     
     //if exist
-    public int m_FileType = 0;
-    public int m_Extension = 0;
+    public readonly int m_FileType = 0;
+    public readonly int m_Extension = 0;
     
-    public int m_Data;
+    public readonly int m_Data;
 
     public PropertyLength(IEnumerable<byte> packet,MessageBase message)
     {

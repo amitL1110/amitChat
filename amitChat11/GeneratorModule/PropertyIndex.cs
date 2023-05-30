@@ -12,9 +12,9 @@ public class PropertyIndex
     public const int MESSAGE_TYPE_INDEX = RECEIVER_ID_INDEX+PropertyLength.RECEIVER_ID;
     public const int DATA_INDEX =  MESSAGE_TYPE_INDEX+PropertyLength.MESSAGE_TYPE;
 
-    public int m_FileTypeIndex;
-    public int m_ExtensionIndex;
-    public int m_TailIndex;
+    public readonly int m_FileTypeIndex;
+    public readonly int m_ExtensionIndex;
+    public readonly int m_TailIndex;
     
     public PropertyIndex(PropertyLength propertyLength)
     {
