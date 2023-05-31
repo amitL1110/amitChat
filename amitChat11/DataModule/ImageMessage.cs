@@ -18,6 +18,12 @@ internal class ImageMessage : MessageBase
         }
     }
     
+    public ImageMessage(MessageType type, byte[] data, Extensions extension,Guid id,Guid senderId,Guid receiverId) : base(type,id,senderId,receiverId)
+    {
+        m_Extension = extension;
+        m_Data = data;
+    }
+    
     public string MData { get; set; }
     public Extensions MExtension{ get; set; }
     

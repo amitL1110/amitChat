@@ -14,6 +14,14 @@ public abstract class MessageBase
         m_ReceiverId = Guid.NewGuid();
         m_Type = type;
     }
+    
+    protected MessageBase(MessageType type, Guid id,Guid senderId,Guid receiverId)
+    {
+        m_Id = id;
+        m_SenderId =senderId;
+        m_ReceiverId = receiverId;
+        m_Type = type;
+    }
      
     public Guid MId { get; set; }
     public Guid MSenderId { get; set; }

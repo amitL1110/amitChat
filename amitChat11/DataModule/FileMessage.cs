@@ -12,6 +12,13 @@ public abstract class FileMessage : MessageBase
         m_FileType = fileType;
     }
     
+    protected FileMessage(MessageType type, Extensions extension, FileType fileType, Guid id, Guid senderId, Guid receiverId) : base(type, id, senderId, receiverId)
+    {
+        m_Extension = extension;
+        m_FileType = fileType;
+    }
+
+    
     public Extensions MExtension { get; set; }
     public FileType MFileType { get; set; }
 

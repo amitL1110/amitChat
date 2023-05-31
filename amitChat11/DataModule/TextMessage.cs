@@ -16,7 +16,11 @@ public class TextMessage : MessageBase
             Console.WriteLine($"Error: {ex.Message}");
         }
     }
-    
+
+    public TextMessage(MessageType type, byte[] data, Guid id, Guid senderId, Guid receiverId) : base(type, id, senderId, receiverId)
+    {
+        m_Data = data;
+    }
     public string MData { get; set; }
 
 }

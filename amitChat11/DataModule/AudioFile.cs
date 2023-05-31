@@ -16,6 +16,11 @@ public class AudioFile: FileMessage
         }
     }
     
+    public AudioFile(MessageType type, Extensions extension, FileType fileType, byte[] data, Guid id, Guid senderId, Guid receiverId) : base(type,extension,fileType,id,senderId,receiverId)
+    {
+        m_Data = data;
+    }
+    
     public string MData { get; set; }
 
 }

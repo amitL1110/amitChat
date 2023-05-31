@@ -19,20 +19,23 @@ public class PropertyLength
     
     public readonly int m_Data;
 
-    public PropertyLength(IEnumerable<byte> packet,MessageBase message)
+    public PropertyLength(IEnumerable<byte> packet)
     {
-        byte[] arr = packet.Skip(PropertyIndex.DATA_LENGTH_INDEX).Take(DATA_LENGTH).ToArray();
-        m_Data = BitConverter.ToInt32(arr, 0);
+        
+        byte[] messageTypeBytes =  packet.Skip(PropertyIndex.MESSAGE_TYPE_INDEX).Take(MESSAGE_TYPE).ToArray();
+        byte[] dataLengthBytes = packet.Skip(PropertyIndex.DATA_LENGTH_INDEX).Take(DATA_LENGTH).ToArray();
+        m_Data = BitConverter.ToInt32(dataLengthBytes, 0);
 
-        if (!(message is TextMessage))
+        if (messageTypeBytes != (BitConverter.GetBytes((int)(MessageType.Text))))
         {
             m_Extension = 4;
 
-            if (message is FileMessage)
+            if (messageTypeBytes == (BitConverter.GetBytes((int)(MessageType.File))))
             {
                 m_FileType = 4;
             }
         }
+        
         
         
     }
