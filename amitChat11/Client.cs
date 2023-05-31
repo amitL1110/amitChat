@@ -3,14 +3,10 @@ using amitChat11.GeneratorModule;
 
 using NetMQ;
 using NetMQ.Sockets;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
 
 namespace amitChat11;
 
-public class FactoryPatternDemo
+public class Client
 {
     
      static void Main(String[] args) {
